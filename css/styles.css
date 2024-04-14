@@ -168,11 +168,33 @@ img {
   color: var(--pressed-state-color);
 }
 
+.current {
+  color: var(--pressed-state-color);
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--pressed-state-color);
+  border-radius: 2px;
+}
+
 .footer {
   background-color: var(--hero-background);
   color: var(--light-backgound);
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+  gap: 120px;
 }
 
 .footer-logo {
@@ -192,12 +214,35 @@ img {
   color: var(--light-backgound);
 }
 
+.footer-social-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-color);
+  margin-bottom: 16px;
+}
+
+.footer-social .social-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.footer-social .social-link:hover,
+.footer-social .social-link:focus {
+  background-color: var(--success-color);
+  color: var(--white-color);
+}
+
 .hero-section {
   background-color: var(--hero-background);
   padding-top: 188px;
   padding-bottom: 188px;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -331,6 +376,58 @@ rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
   width: 16px;
 }
 
+.team-overlay .social-link:hover,
+.team-overlay .social-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
+.customers-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.customers-section .section-title {
+  margin-bottom: 72px;
+}
+
+.customers-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.customers-item {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
+
+.customers-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border: 1px solid var(--pressed-state-color);
+}
+
+.customer-icon {
+  height: 56px;
+  width: 104px;
+  color: #8e8f99;
+}
+
+.customers-link:hover .customer-icon,
+.customers-link:focus .customer-icon {
+  color: var(--pressed-state-color);
+}
+
 .portfolio-section {
   padding-top: 96px;
   padding-bottom: 120px;
@@ -390,5 +487,3 @@ rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
 .portfolio-overlay .subtitle {
   margin-bottom: 8px;
 }
-
-
